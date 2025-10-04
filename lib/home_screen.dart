@@ -30,7 +30,29 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        title: const Text("Recipe App"),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      ),
+      body: ListView.separated(
+        itemCount: recipes.length,
+        separatorBuilder: (context, index) => const SizedBox(height: 10),
+        itemBuilder: (context, index) {
+          final recipe = recipes[index];
+          return Container(
+            margin: const EdgeInsets.symmetric(horizontal: 12),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 255, 255, 255),
+              border: Border.all(color: const Color.fromARGB(255, 0, 0, 0), width: 1.5),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: ListTile(
+              title: Text(recipe["name"]!),
+              trailing: const Icon(Icons.arrow_forward),
+            )
+          );
+        }
+      ),
     );
   }
 }
