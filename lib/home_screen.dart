@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
       "ingredients": "Steak, steak seasoning, butter",
       "instructions": "1. Season both sides of the steak with steak seasoning\n 2. Slice prefered amount of butter and put into pan on medium\n 3. Put steak in pan and cook both sides around 3 to 4 minutes each\n 4. Take steak out and let it rest for 2 minutes"
     },
-  ]
+  ];
 
   @override
   Widget build(BuildContext context) {
