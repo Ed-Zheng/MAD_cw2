@@ -51,8 +51,19 @@ class HomeScreen extends StatelessWidget {
             child: ListTile(
               title: Text(recipe["name"]!),
               trailing: const Icon(Icons.arrow_forward),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      name: recipe["name"]!,
+                      ingredients: recipe["ingredients"]!,
+                      instructions: recipe["instructions"]!,
+                    ),
+                  ),
+                );
+              },
             )
-  
           );
         }
       ),
